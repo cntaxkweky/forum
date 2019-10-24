@@ -69,12 +69,12 @@
         $(window).scroll(function(){
             var scrollTop =  $(window).scrollTop();
             if( scrollTop > 500 ) {  // 当顶部的滚动距离大于500px时，显示返回顶部按钮
- 　　　　                                $('.toUp').css('display','block');
-                                        $('.toUp').fadeIn( 300 );
-                                    }else{
-  　　　　                               $('.toUp').fadeOut( 300 );
-                                         $('.toUp').css('display','none');
- 　　                               }
+            $('.toUp').css('display','block');
+            $('.toUp').fadeIn( 300 );
+            }else{
+                $('.toUp').fadeOut( 300 );
+                $('.toUp').css('display','none');
+                }
         })
     </script>
 </body>
