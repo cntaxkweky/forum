@@ -1,0 +1,8 @@
+.forumback img,.forumdesign img,.forummember img,.forumarchitecture img,.forumaprocess img,.footers img{
+    width: 100%;
+    height: 100%;
+}
+.forumback img:first-child,.forumdesign img:first-child,.forummember img:first-child,.forumarchitecture img:first-child,.forumaprocess img:first-child{
+    display: none;
+
+}

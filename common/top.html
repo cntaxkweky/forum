@@ -1,0 +1,149 @@
+<div class="header_container">
+    <div class="c-nav">
+        <div class="container navFlex">
+            <div class="flexItem">
+                <img class="logo" src="/images/wdcf_logo.png" />
+            </div>
+
+            <div class="flexItem hiden">
+                <!-- <img class="btnImg" src="img/navBtn.png" /> -->
+                <i class="iconfont icon-gengduo btnImg"></i>
+            </div>
+            <div class="flexItem show">
+                <ul>
+                    <li>
+                        <a href="#" data-locale="index"></a>
+                    </li>
+                    <li>
+                        <a href="#forum_Back" data-locale="forum_background"></a>
+                    </li>
+                    <li>
+                        <a href="#forum_Design" data-locale="forum_targeting"></a>
+                    </li>
+                    <li>
+                        <a href="#forum_Member" data-locale="forum_member"></a>
+                    </li>
+                    <li>
+                        <a href="#forum_Architecture" data-locale="forum_architecture"></a>
+                    </li>
+                    <li>
+                        <a href="#forum_Process" data-locale="forum_agenda"></a>
+                    </li>
+                    <li>
+                        <a href="#forum_footers" data-locale="contact_us"></a>
+                    </li>
+                </ul>
+                <!-- <select name="" id="lang">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <option checked value="zh">繁体中文</option>
+                    <option value=" ">English</option>
+                </select> -->
+
+                <div class="select">
+                    <select name="" id="lang">
+                        <option checked value="zh">繁体中文</option>
+                        <option value=" ">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="header_content">
+        <div class="header_left_content">
+            <img src="images/wdcf_logo.png" />
+        </div>
+        <div class="header_center_content">
+            <nav>
+                <ul class="header_title">
+                    <li data-locale="index"></li>
+                    <li data-locale="forum_background"></li>
+                    <li data-locale="forum_targeting"></li>
+                    <li data-locale="forum_member"></li>
+                    <li data-locale="forum_architecture"></li>
+                    <li data-locale="forum_agenda"></li>
+                    <li data-locale="contact_us"></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="right_block">
+            <select name="" id="lang">
+                        <option checked value="zh">中文</option>
+                        <option value=" ">English</option>
+                </select>
+        </div>
+    </div> -->
+</div>
+<script>
+    var lang = sessionStorage.getItem("lang");
+    if (lang === null) {
+        lang = "zh";
+    }
+    loadProperties(lang);
+    $("#lang").val(lang);
+
+    function loadProperties(types) {
+        $.i18n.properties({
+            name: 'strings', //属性文件名     命名格式： 文件名_国家代号.properties
+            path: 'i18n/', //注意这里路径是你属性文件的所在文件夹
+            mode: 'map',
+            language: types, //这就是国家代号 name+language刚好组成属性文件名：strings+zh -> strings_zh.properties
+            callback: function () {
+                $("[data-locale]").each(function () {
+                    $(this).html($.i18n.prop($(this).data("locale")));
+                });
+                $("[data-placeholder]").each(function () {
+                    $(this).attr('placeholder', $.i18n.prop($(this).data("placeholder")));
+                });
+            }
+        });
+        // if(sessionStorage.getItem("lang") == "zh"){
+        //     $('#forum_Back').find('img:first-child').css('display','block').parent().children().eq(1).css('display','none');
+        //     $('#forum_Design').find('img:first-child').css('display','block').parent().children().eq(1).css('display','none');
+        //     $('#forum_Member').find('img:first-child').css('display','block').parent().children().eq(1).css('display','none');
+        //     $('#forum_Architecture').find('img:first-child').css('display','block').parent().children().eq(1).css('display','none');
+        //     $('#forum_Process').find('img:first-child').css('display','block').parent().children().eq(1).css('display','none');
+        // }else{
+        //     $('#forum_Back').find('img:first-child').css('display','none').parent().children().eq(1).css('display','block');
+        //     $('#forum_Design').find('img:first-child').css('display','none').parent().children().eq(1).css('display','block');
+        //     $('#forum_Member').find('img:first-child').css('display','none').parent().children().eq(1).css('display','block');
+        //     $('#forum_Architecture').find('img:first-child').css('display','none').parent().children().eq(1).css('display','block');
+        //     $('#forum_Process').find('img:first-child').css('display','none').parent().children().eq(1).css('display','block');
+        // }
+    }
+
+    //切换语言
+    $("#lang").on('change', function () {
+        sessionStorage.setItem("lang", $(this).val());
+        loadProperties($(this).val());
+    });
+
+    //用于判断导航栏的状态
+    var toggle = true;
+
+    //导航栏按钮
+    $('.btnImg').click(function () {
+        if (toggle) {
+            $('.btnImg').css("border", "1px solid #b0ccf3");
+            toggle = false
+        } else {
+            $('.btnImg').css("border", "1px solid transparent");
+            toggle = true;
+        }
+        $(".show").slideToggle(300);
+    })
+
+    //窗口大小发生改变
+    $(window).resize(function () {
+        //获取窗口宽度
+        var windSize = $(window).width();
+        if (windSize > 576) {
+            $(".show").slideDown(0);
+        } else {
+            $(".show").slideUp(0);
+        }
+    });
+    
+</script>
+
+</html>

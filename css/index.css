@@ -1,0 +1,16 @@
+.form-control {
+    color: #FFFFFF !important;
+    background-color: transparent !important;
+}
+
+.index_container {
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 70% !important;
+    }
+}
+
+

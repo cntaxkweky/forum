@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>世界數字貨幣論壇</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/section.css">
+    <link rel="stylesheet" href="css/top.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+</head>
+<style>
+    .swiper-wrapper img {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<body>
+    <!-- <include src="common/top.html"></include> -->
+    <div id="tops"></div>
+    <div class="index_container">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/banner_first.png" />
+                </div>
+                <!-- <div class="swiper-slide">
+                    <img src="images/banner_first.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/banner_first.png" />
+                </div> -->
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div id="section"></div>
+    <div id="footer"></div>
+    <!-- <include src='common/section.html'></include> -->
+    <!-- <include src="common/footer.html"></include> -->
+    <script src="js/jquery.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <!-- <script src="js/include.js"></script> -->
+    <script src="js/jquery.i18n.properties.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#tops").load('common/top.html');
+            $("#section").load('common/section.html');
+            $("#footer").load('common/footer.html');
+        })
+
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        })
+        $(window).scroll(function(){
+            var scrollTop =  $(window).scrollTop();
+            if( scrollTop > 500 ) {  // 当顶部的滚动距离大于500px时，显示返回顶部按钮
+ 　　　　                                $('.toUp').css('display','block');
+                                        $('.toUp').fadeIn( 300 );
+                                    }else{
+  　　　　                               $('.toUp').fadeOut( 300 );
+                                         $('.toUp').css('display','none');
+ 　　                               }
+        })
+    </script>
+</body>
+<script>
+</script>
+</html>
