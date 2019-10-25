@@ -286,16 +286,16 @@ ul.header_title li {
         right: 15px;
     }
     .c-nav .show {
-        width: 55%;
+        width: 45%;
         font-size: 14px;
         text-align: left;
         border-radius: 10px;
         display: none;
         position: absolute;
         top: 50px;
-        right: 15px;
+        right: 0px;
         padding: 0 0 10px 0;
-        background: #000000;
+        background: #102185;
     }
     .flexItem.show select {
         display: block;
