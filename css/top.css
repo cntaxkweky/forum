@@ -48,6 +48,7 @@ ul.header_title {
 
 .header_container {
     width: 100%;
+    position: relative;
 }
 
 ul.header_title li {
@@ -173,7 +174,10 @@ ul.header_title li {
 
 .c-nav {
     width: 100%;
-    background-color:rgb(16,33,133) ; 
+    background-color:transparent ; 
+    position: absolute;
+    top: 0;
+    z-index: 999;
 }
 
 .c-nav .navFlex {
@@ -213,6 +217,7 @@ ul.header_title li {
 .c-nav .logo {
     height: 40px;
     margin-right: 80px;
+    padding-left: 10px;
 }
 
 .c-nav .btnImg {
@@ -221,6 +226,11 @@ ul.header_title li {
     padding: 3px 8px 3px 8px;
     box-sizing: content-box;
     border: 1px solid transparent;
+}
+@media screen and (min-width:2000px){
+    .c-nav .logo{
+        padding-left: 25px;
+    }
 }
 
 @media screen and (max-width:1200px) {
@@ -244,6 +254,7 @@ ul.header_title li {
         background-color: rgb(16,33,133);
         padding: 10px 0px 10px 0px;
         opacity: 0.9;
+        position: relative;
     }
     .c-nav .navFlex {
         flex-wrap: wrap;
@@ -254,7 +265,7 @@ ul.header_title li {
         height: 30px;
     }
     .c-nav ul li {
-        padding: 10px;
+        padding: 10px 0 10px 30px;
         margin-left: 0px;
         display: block;
     }
@@ -270,12 +281,21 @@ ul.header_title li {
     }
     .c-nav .hiden {
         display: block;
+        color: #ffff;
+        position: absolute;
+        right: 15px;
     }
     .c-nav .show {
-        width: 100%;
+        width: 55%;
         font-size: 14px;
-        text-align: center;
+        text-align: left;
+        border-radius: 10px;
         display: none;
+        position: absolute;
+        top: 50px;
+        right: 15px;
+        padding: 0 0 10px 0;
+        background: #000000;
     }
     .flexItem.show select {
         display: block;
@@ -283,6 +303,10 @@ ul.header_title li {
     }
     #lang{
         margin: 0  auto !important;
+    }
+
+    .c-nav .select{
+        margin-left: 15px !important;
     }
 }
 
@@ -296,7 +320,7 @@ ul.header_title li {
     overflow: hidden;
     background-color: transparent;
     color: #FFFFFF;
-    border: 1px solid #aaa;
+    border: 1px solid #fff;
     text-shadow: none;
     border-radius: 4px; 
     transition: box-shadow 0.25s ease;
@@ -373,18 +397,21 @@ ul.header_title li {
   
 
   .xiangshang{
-    border: 1px solid  rgb(38, 36, 129);
-    padding: 4px 10px 4px 10px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     position: fixed;
-    background: rgb(16,13,133);
+    background: #253cc2;
     bottom: 45px;
     text-decoration: none;
     right: 25px;
-    font-size: 25px;
+    font-size: 16px;
     color: #FFFFFF;
     z-index: 999;
+    box-shadow: 0px 0px 3px 1px #253cc2;
     cursor: pointer;
+    text-align: center;
+    line-height: 40px;
   }
 
 /* @media screen and (max-width:576px) {

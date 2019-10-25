@@ -24,23 +24,6 @@
 <body>
     <include src="common/top.html"></include>
     <!-- <div id="tops"></div> -->
-    <div class="index_container">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="images/banner.png" />
-                </div>
-                <!-- <div class="swiper-slide">
-                    <img src="images/banner_first.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/banner_first.png" />
-                </div> -->
-            </div>
-            <!-- 如果需要分页器 -->
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
     <!-- <div id="section"></div> -->
     <!-- <div id="footer"></div> -->
     <include src='common/section.html'></include>
@@ -58,14 +41,7 @@
         //     $("#footer").load('common/footer.html');
         // })
 
-        var mySwiper = new Swiper('.swiper-container', {
-            direction: 'horizontal',
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        })
+
         $(window).scroll(function(){
             var scrollTop =  $(window).scrollTop();
             if( scrollTop > 500 ) {  // 当顶部的滚动距离大于500px时，显示返回顶部按钮
