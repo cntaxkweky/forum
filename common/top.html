@@ -51,22 +51,26 @@
         </div>
     </div>
 
-    <div class="index_container">
+    <!-- <div class="index_container">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="images/banner.png" />
+                    <img src="images/banner_first.png" />
                 </div>
-                <!-- <div class="swiper-slide">
-                        <img src="images/banner_first.png" />
-                    </div>
-                    <div class="swiper-slide">
+                <div class="swiper-slide" style="display: none;">
                         <img src="images/banner_first.png" />
                     </div> -->
-            </div>
-            <!-- 如果需要分页器 -->
-            <div class="swiper-pagination"></div>
+    <!-- <div class="swiper-slide">
+                        <img src="images/banner_first.png" />
+                    </div> -->
+    <!-- </div> -->
+    <!-- 如果需要分页器 -->
+    <!-- <div class="swiper-pagination"></div>
         </div>
+    </div> -->
+    <div class="index_container">
+        <img src="images/banner-english.png" alt="">
+        <img src="images/banner.png" alt="" style="display: none;">
     </div>
 
     <!-- <div class="header_content">
@@ -126,21 +130,26 @@
                 });
             }
         });
-        // if(sessionStorage.getItem("lang") == "zh"){
-        //     $('#forum_Back').find('img:first-child').css('display','none').parent().children().eq(1).css('display','block');
-        //     $('#forum_Design').find('img:first-child').css('display','none').parent().children().eq(1).css('display','block');
-        //     $('#forum_Member').find('img:first-child').css('display','none').parent().children().eq(1).css('display','block');
-        //     $('#forum_Architecture').find('img:first-child').css('display','none').parent().children().eq(1).css('display','block');
-        //     $('#forum_Process').find('img:first-child').css('display','none').parent().children().eq(1).css('display','block');
-        //     $('#forum_footers').find('img:first-child').css('display','none').parent().children().eq(1).css('display','block');
-        // }else{
-        //     $('#forum_Back').find('img:first-child').css('display','block').parent().children().eq(1).css('display','none');
-        //     $('#forum_Design').find('img:first-child').css('display','block').parent().children().eq(1).css('display','none');
-        //     $('#forum_Member').find('img:first-child').css('display','block').parent().children().eq(1).css('display','none');
-        //     $('#forum_Architecture').find('img:first-child').css('display','block').parent().children().eq(1).css('display','none');
-        //     $('#forum_Process').find('img:first-child').css('display','block').parent().children().eq(1).css('display','none');
-        //     $('#forum_footers').find('img:first-child').css('display','block').parent().children().eq(1).css('display','none');
-        // }
+        if (sessionStorage.getItem("lang") == "zh") {
+            $('.index_container').find('img:first-child').css('display', 'none').parent().children().eq(1).css('display', 'block');
+            $('#forum_Back').find('img:first-child').css('display', 'none').parent().children().eq(1).css('display', 'block');
+            $('#forum_Design').find('img:first-child').css('display', 'none').parent().children().eq(1).css('display', 'block');
+            $('#forum_Member').find('img:first-child').css('display', 'none').parent().children().eq(1).css('display', 'block');
+            $('#forum_Architecture').find('img:first-child').css('display', 'none').parent().children().eq(1).css('display', 'block');
+            $('#forum_Process').find('img:first-child').css('display', 'none').parent().children().eq(1).css('display', 'block');
+            $('#forum_footers').find('img:first-child').css('display', 'none').parent().children().eq(1).css('display', 'block');
+
+        } else {
+            $('.select').css('margin-left','33px');
+            $('.c-nav ul li').css('margin-left','18px');
+            $('.index_container').find('img:first-child').css('display', 'block').parent().children().eq(1).css('display', 'none');
+            $('#forum_Back').find('img:first-child').css('display', 'block').parent().children().eq(1).css('display', 'none');
+            $('#forum_Design').find('img:first-child').css('display', 'block').parent().children().eq(1).css('display', 'none');
+            $('#forum_Member').find('img:first-child').css('display', 'block').parent().children().eq(1).css('display', 'none');
+            $('#forum_Architecture').find('img:first-child').css('display', 'block').parent().children().eq(1).css('display', 'none');
+            $('#forum_Process').find('img:first-child').css('display', 'block').parent().children().eq(1).css('display', 'none');
+            $('#forum_footers').find('img:first-child').css('display', 'block').parent().children().eq(1).css('display', 'none');
+        }
     }
 
     //切换语言
